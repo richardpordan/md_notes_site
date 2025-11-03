@@ -1,0 +1,45 @@
+:root {
+  /* Backgrounds */
+  --color-bg: #1f2428;          /* Main background (dark, but not pitch black) */
+  --color-bg-alt: #2b3036;      /* Slightly lighter panels, cards */
+  --color-surface: #343a40;     /* Highlighted areas (code blocks, borders) */
+
+  /* Text */
+  --color-text: #e4e7eb;        /* Main text (soft white) */
+  --color-text-muted: #a0a7b0;  /* Secondary text */
+  --color-heading: #f5f7fa;     /* Titles/headings, slightly brighter */
+
+  /* Accents */
+  --color-accent: #6ca0dc;      /* Calming blue accent (links, highlights) */
+  --color-accent-hover: #8cb9e8;
+  --color-success: #8bd17c;
+  --color-warning: #e7c37f;
+  --color-error: #d77a7a;
+
+  /* Borders & separators */
+  --color-border: #3c434a;
+  --color-border-light: #484f56;
+
+  /* Code blocks, inline code, etc */
+  --color-code-bg: #2a2f35;
+  --color-code-text: #d6d8da;
+
+  /* Shadows */
+  --shadow-soft: 0 2px 6px rgba(0, 0, 0, 0.25);
+  --shadow-strong: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+  /* Typography sizing (optional helpers) */
+  --font-body: "Inter", "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --font-size-base: 18px;
+  --line-height-base: 1.6;
+  --bold-weight: 700;
+}
+
+html, body {
+    margin: 0;
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+}
