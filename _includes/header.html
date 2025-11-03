@@ -3,7 +3,7 @@
     {% for page in site.pages %}
       {% if page.layout == "page" %}
         {% if page.title %}
-          <a class="nav-button" href="{{ page.url | prepend: site.baseurl }}">
+          <a class="nav-button" href="{{ page.url | prepend: site.url }}">
             {{ page.title }}
           </a>
         {% endif %}

@@ -3,7 +3,7 @@ title: Markdown notes site
 description: >
   Markdown notes to Jekyll site with Knowledge Graph. 
 baseurl: ''
-url: 'https://richardpordan.github.io/md_notes_site/'
+url: 'https://richardpordan.github.io/md_notes_site'
 sass:
   sass_dir: _sass
 include: ['_notes', '_pages']
