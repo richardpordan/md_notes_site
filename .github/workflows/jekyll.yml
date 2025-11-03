@@ -62,17 +62,35 @@ jobs:
         # Automatically uploads an artifact from the './_site' directory by default
         uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
+          name: dist
           path: _site
 
   # Deployment job
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    name: Deploy
     needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          ref: _deploy
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: _site
+      - name: Commit and push
+        run: |
+          git config user.name "auto-commit n3pdsnm5"
+          git config user.email "autocommit_n3pdsnm5@users.noreply.github.com"
+          git pull origin _deploy
+          git add _site
+          git commit -m "Auto generated from ${GITHUB_SHA::7}"
+          git push
+      # - name: Trigger deploy hook
+      #   env: 
+      #     DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
+      #   run: curl -X POST "$DEPLOY_HOOK"
