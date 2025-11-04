@@ -81,7 +81,7 @@ jobs:
           git commit -m "Auto generated from ${GITHUB_SHA::7}"
           git push
 
-      # - name: Trigger deploy hook
-      #   env: 
-      #     DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
-      #   run: curl -X POST "$DEPLOY_HOOK"
+      - name: Trigger deploy hook
+        env: 
+          DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
+        run: curl -X POST "$DEPLOY_HOOK"
