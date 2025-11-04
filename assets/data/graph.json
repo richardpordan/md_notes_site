@@ -1,0 +1,68 @@
+{
+  "nodes": [
+    {
+      "id": "origin",
+      "filepath": "index.html"
+    },
+    {
+      "id": "to_do",
+      "filepath": "_notes/to_do_list.html"
+    },
+    {
+      "id": "wikipedia_random_knowledge",
+      "filepath": "_notes/random_knowledge.html"
+    },
+    {
+      "id": "social_media_fast",
+      "filepath": "_notes/social_media_fasting.html"
+    },
+    {
+      "id": "ideas",
+      "filepath": "_notes/ideas.html"
+    },
+    {
+      "id": "watering_plants",
+      "filepath": "_notes/plants_watering.html"
+    },
+    {
+      "id": "all_notes",
+      "filepath": "_pages/all_notes.html"
+    },
+    {
+      "id": "graph",
+      "filepath": "_pages/graph.html"
+    }
+  ],
+  "links": [
+    {
+      "source": "origin",
+      "source_filepath": "index.html",
+      "target": "to_do",
+      "target_filepath": "_notes/to_do_list.html"
+    },
+    {
+      "source": "origin",
+      "source_filepath": "index.html",
+      "target": "ideas",
+      "target_filepath": "_notes/ideas.html"
+    },
+    {
+      "source": "to_do",
+      "source_filepath": "_notes/to_do_list.html",
+      "target": "watering_plants",
+      "target_filepath": "_notes/plants_watering.html"
+    },
+    {
+      "source": "ideas",
+      "source_filepath": "_notes/ideas.html",
+      "target": "wikipedia_random_knowledge",
+      "target_filepath": "_notes/random_knowledge.html"
+    },
+    {
+      "source": "ideas",
+      "source_filepath": "_notes/ideas.html",
+      "target": "social_media_fast",
+      "target_filepath": "_notes/social_media_fasting.html"
+    }
+  ]
+}
