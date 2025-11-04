@@ -70,14 +70,14 @@ jobs:
       - name: Extract tar
         run: |
           tar -xvf _site/artifact.tar .
-          ls 
+          rm -rf _site
 
       - name: Commit and push
         run: |
           git config user.name "auto-commit n3pdsnm5"
           git config user.email "autocommit_n3pdsnm5@users.noreply.github.com"
           git pull origin _deploy
-          git add _site
+          git add .
           git commit -m "Auto generated from ${GITHUB_SHA::7}"
           git push
 
