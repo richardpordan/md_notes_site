@@ -33,7 +33,7 @@ async function draw_graph() {
     .selectAll("text")
     .data(graph.nodes)
     .enter().append("text")
-    .text(d => d.id)
+    .text(d => d.title)
     .attr("font-size", 16)
     .attr("dx", 18)
     .attr("dy", ".35em");

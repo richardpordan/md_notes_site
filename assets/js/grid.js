@@ -8,7 +8,7 @@ async function make_grid () {
     rowData: data.nodes,
     // Column Definitions: Defines the columns to be displayed.
     columnDefs: [
-      { field: "id" },
+      { field: "title" },
     ],
     onCellClicked: (event) => {
       url = new URL(

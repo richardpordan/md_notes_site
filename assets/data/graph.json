@@ -1,68 +1,86 @@
 {
   "nodes": [
     {
-      "id": "origin",
-      "filepath": "index.html"
+      "filepath": "index.html",
+      "title": "Origin",
+      "id": "origin"
     },
     {
-      "id": "ideas",
-      "filepath": "_notes/ideas.html"
+      "filepath": "_notes/ideas.html",
+      "title": "Ideas",
+      "id": "ideas"
     },
     {
-      "id": "to_do",
-      "filepath": "_notes/to_do_list.html"
+      "filepath": "_notes/to_do_list.html",
+      "title": "To do",
+      "id": "to_do"
     },
     {
-      "id": "social_media_fast",
-      "filepath": "_notes/social_media_fasting.html"
+      "filepath": "_notes/social_media_fasting.html",
+      "title": "Social media fast",
+      "id": "social_media_fast"
     },
     {
-      "id": "watering_plants",
-      "filepath": "_notes/plants_watering.html"
+      "filepath": "_notes/plants_watering.html",
+      "title": "Watering plants",
+      "id": "watering_plants"
     },
     {
-      "id": "wikipedia_random_knowledge",
-      "filepath": "_notes/random_knowledge.html"
+      "filepath": "_notes/random_knowledge.html",
+      "title": "Wikipedia random knowledge",
+      "id": "wikipedia_random_knowledge"
     },
     {
-      "id": "all_notes",
-      "filepath": "_pages/all_notes.html"
+      "filepath": "_pages/all_notes.html",
+      "title": "All notes",
+      "id": "all_notes"
     },
     {
-      "id": "graph",
-      "filepath": "_pages/graph.html"
+      "filepath": "_pages/graph.html",
+      "title": "Graph",
+      "id": "graph"
     }
   ],
   "links": [
     {
-      "source": "origin",
       "source_filepath": "index.html",
-      "target": "to_do",
-      "target_filepath": "_notes/to_do_list.html"
-    },
-    {
+      "title_x": "Origin",
       "source": "origin",
+      "target_filepath": "_notes/to_do_list.html",
+      "title_y": "To do",
+      "target": "to_do"
+    },
+    {
       "source_filepath": "index.html",
-      "target": "ideas",
-      "target_filepath": "_notes/ideas.html"
+      "title_x": "Origin",
+      "source": "origin",
+      "target_filepath": "_notes/ideas.html",
+      "title_y": "Ideas",
+      "target": "ideas"
     },
     {
-      "source": "ideas",
       "source_filepath": "_notes/ideas.html",
-      "target": "wikipedia_random_knowledge",
-      "target_filepath": "_notes/random_knowledge.html"
-    },
-    {
+      "title_x": "Ideas",
       "source": "ideas",
-      "source_filepath": "_notes/ideas.html",
-      "target": "social_media_fast",
-      "target_filepath": "_notes/social_media_fasting.html"
+      "target_filepath": "_notes/random_knowledge.html",
+      "title_y": "Wikipedia random knowledge",
+      "target": "wikipedia_random_knowledge"
     },
     {
-      "source": "to_do",
+      "source_filepath": "_notes/ideas.html",
+      "title_x": "Ideas",
+      "source": "ideas",
+      "target_filepath": "_notes/social_media_fasting.html",
+      "title_y": "Social media fast",
+      "target": "social_media_fast"
+    },
+    {
       "source_filepath": "_notes/to_do_list.html",
-      "target": "watering_plants",
-      "target_filepath": "_notes/plants_watering.html"
+      "title_x": "To do",
+      "source": "to_do",
+      "target_filepath": "_notes/plants_watering.html",
+      "title_y": "Watering plants",
+      "target": "watering_plants"
     }
   ]
 }
