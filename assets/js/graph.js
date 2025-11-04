@@ -1,7 +1,5 @@
 async function draw_graph() {
-    const graph = await d3.json(
-      "../assets/data/graph.json"
-    )
+    const graph = await d3.json("/assets/data/graph.json")
     
     const svgParent = document.getElementById("content-container")
     const width = svgParent.clientWidth
