@@ -1,10 +1,4 @@
-# This workflow uses actions that are not certified by GitHub.
-# They are provided by a third-party and are governed by
-# separate terms of service, privacy policy, and support
-# documentation.
-
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy Jekyll site to Pages
+name: Deploy Jekyll site
 
 on:
   # Runs on pushes targeting the default branch
@@ -13,18 +7,6 @@ on:
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
-concurrency:
-  group: "pages"
-  cancel-in-progress: false
 
 jobs:
   # Build job
@@ -73,15 +55,23 @@ jobs:
     permissions:
       contents: write
     steps:
+
       - name: Checkout repo
         uses: actions/checkout@v4
         with:
           ref: _deploy
+
       - name: Download artifacts
         uses: actions/download-artifact@v4
         with:
           name: dist
           path: _site
+      
+      - name: Extract tar
+        run: |
+          tar -xvf _site/artifact.tar .
+          ls 
+
       - name: Commit and push
         run: |
           git config user.name "auto-commit n3pdsnm5"
@@ -90,6 +80,7 @@ jobs:
           git add _site
           git commit -m "Auto generated from ${GITHUB_SHA::7}"
           git push
+
       # - name: Trigger deploy hook
       #   env: 
       #     DEPLOY_HOOK: ${{ secrets.DEPLOY_HOOK }}
