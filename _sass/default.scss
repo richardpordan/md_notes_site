@@ -29,6 +29,7 @@ a:hover {
     display: flex;
     flex-direction: row;
     justify-content: end;
+    padding-top: 10px;
 }
 
 .nav-button {
@@ -36,6 +37,7 @@ a:hover {
     font-weight: var(--bold-weight);
     padding: 10px;
     margin-left: 10px;
+    box-shadow: var(--shadow-strong);
 }
 
 footer {
@@ -65,4 +67,22 @@ text {
 blockquote {
   padding: 10px;
   background-color: var(--color-bg-alt);
+  box-shadow: var(--shadow-soft);
+  border-radius: var(--default-border-radius);
+}
+
+#graph, #pagesGrid {
+  background-color: var(--color-bg-alt);
+  border-radius: var(--default-border-radius);
+  box-shadow: var(--shadow-strong);
+}
+
+#pagesGrid {
+  --ag-background-color: var(--color-bg);
+  --ag-odd-row-background-color: var(--color-bg-alt);
+  --ag-header-background-color: #1e1e1e;
+  --ag-foreground-color: var(--color-text);
+  --ag-border-color: #333;
+  --ag-font-family: var(--font-body);
+  --ag-font-size: var(--font-size-base);
 }

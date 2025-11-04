@@ -1,4 +1,6 @@
 css_path: "/assets/css/main.css"
+favicon_path: "/assets/img/favicon.png"
 d3_cdn: "https://d3js.org/d3.v7.min.js"
 graph_js_path: "/assets/js/graph.js"
-favicon_path: "/assets/img/favicon.png"
+ag_grid_cdn: "https://cdn.jsdelivr.net/npm/ag-grid-community/dist/ag-grid-community.min.js"
+grid_js_path: "/assets/js/grid.js"
