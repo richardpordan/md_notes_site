@@ -64,7 +64,7 @@ def create_all_nodes_df(NOTES_DIR: Path) -> pd.DataFrame:
     all_nodes["title"] = all_nodes.filepath.apply(lambda x: extract_title(x))
     all_nodes["id"] = all_nodes.title.apply(title_to_id)
 
-    return all_nodes[["id", "filepath"]]
+    return all_nodes
 
 
 def create_all_links_df(nodes: pd.DataFrame) -> pd.DataFrame:
