@@ -1,9 +1,4 @@
-async function draw_graph() {
-  const graph = await d3.json(new URL(
-    "/assets/data/graph.json",
-    window.location.origin
-  ))
-
+async function drawGraph(graph) {
   const svgParent = document.getElementById("content-container")
   const width = svgParent.clientWidth
   const height = 0.75 * width
@@ -12,7 +7,10 @@ async function draw_graph() {
     .attr("height", height)
 
   const simulation = d3.forceSimulation(graph.nodes)
-    .force("link", d3.forceLink(graph.links).id(d => d.id).distance(100))
+    .force("link", d3.forceLink(graph.links)
+      .id(d => d.id)
+      .distance(100)
+    )
     .force("charge", d3.forceManyBody().strength(-200))
     .force("center", d3.forceCenter(width / 2, height / 2));
 
@@ -75,7 +73,7 @@ async function draw_graph() {
 
   d3.selectAll(".node").on("click", (event) => {
     url = new URL(
-      event.target.__data__.filepath,
+      event.target.__data__.href,
       window.location.origin
     )
     window.location = url
@@ -83,4 +81,7 @@ async function draw_graph() {
 
 }
 
-draw_graph()
+window.addEventListener("graph-ready", (e) => {
+  const graph = e.detail;
+  drawGraph(graph);
+});

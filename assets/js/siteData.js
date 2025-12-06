@@ -84,9 +84,9 @@ async function readSitemap() {
   );
   const graphData = {}
   graphData.nodes = scrapedData.map(el => el.page)
-  graphData.links = scrapedData.map(el => el.links)
-
-  console.log(graphData)
+  graphData.links = [].concat(...scrapedData.map(
+    el => el.links
+  ));
   
   window.dispatchEvent(new CustomEvent(
     "graph-ready", { detail: graphData })
