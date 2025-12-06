@@ -1,8 +1,4 @@
-async function make_grid () {
-  // Grid Options: Contains all of the Data Grid configurations
-  const data = await fetch(new URL("/assets/data/graph.json",window.location.origin))
-    .then(response => response.json())
-
+async function makeGrid (data) {
   const gridOptions = {
     // Row Data: The data to be displayed.
     rowData: data.nodes,
@@ -11,8 +7,8 @@ async function make_grid () {
       { field: "title" },
     ],
     onCellClicked: (event) => {
-      url = new URL(
-        event.data.filepath,
+      const url = new URL(
+        event.data.href,
         window.location.origin
       )
       window.location = url
@@ -29,4 +25,7 @@ async function make_grid () {
   agGrid.createGrid(myGridElement, gridOptions);
 }
 
-make_grid()
+window.addEventListener("graph-ready", (e) => {
+  const graph = e.detail;
+  makeGrid(graph);
+});

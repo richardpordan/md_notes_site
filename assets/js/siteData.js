@@ -49,10 +49,14 @@ async function scrapePage(pagePath) {
 
 async function readSitemap() {
   try {
-    const sitemap = await fetch(new URL("/sitemap.xml", window.location.origin))
+    const sitemap = await fetch(
+        new URL("/sitemap.xml", window.location.origin)
+      )
       .then(response => response.text());
     const parser = new DOMParser();
-    const xmlDoc = parser.parseFromString(sitemap, "application/xml");
+    const xmlDoc = parser.parseFromString(
+      sitemap, "application/xml"
+    );
     const NS = "http://www.sitemaps.org/schemas/sitemap/0.9";
     const locs = [...xmlDoc.getElementsByTagNameNS(NS, "loc")];
     const pageUrls = locs
@@ -82,6 +86,9 @@ async function readSitemap() {
   graphData.nodes = scrapedData.map(el => el.page)
   graphData.links = scrapedData.map(el => el.links)
 
-  window.GRAPH_DATA = graphData
-  console.log(window.GRAPH_DATA)
+  console.log(graphData)
+  
+  window.dispatchEvent(new CustomEvent(
+    "graph-ready", { detail: graphData })
+  );
 })();
