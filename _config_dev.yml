@@ -3,7 +3,9 @@ title: Markdown notes site
 description: >
   Markdown notes to Jekyll site with Knowledge Graph. 
 baseurl: ''
-url: 'http://localhost:3000/_site'
+url: 'http://localhost:4000/_site'
 sass:
   sass_dir: _sass
 include: ['_notes', '_pages']
+plugins:
+  - jekyll-sitemap
